@@ -34,22 +34,33 @@ export class ReportComponent {
               style: 'anotherStyle',
             },
             {
+              text: `Codigo: ${1516651}`,
+              style: 'codeStyle',
+            },
+            {
               text: 'Descripción',
               style: 'ptext',
+            },
+            // colored QR
+            {
+              qr: 'Numero de reporte: #####, ¡Solicitud de reporte enviado! ',
+              fit: 100,
+              foreground: 'black',
+              background: 'white',
+              margin: [400, 20],
+            },
+            {text: `En este apartado estara una breve descripción del reporte, donde el usuario podra escribir o seleccionar la razón.`, 
+             style: 'patext2',
             },
           ],
         },
 
-        // colored QR
-        {
-          qr: 'Numero de reporte: #####, ¡Solicitud de reporte enviado! ',
-          fit: '150',
-          foreground: 'black',
-          background: 'white',
-          margin: [400, 20],
-        },
       ],
       styles: {
+        patext2: {
+          alignment: 'left',
+          margintop: 800
+        },
         header: {
           fontSize: 22,
           bold: true,
@@ -58,12 +69,24 @@ export class ReportComponent {
           italics: true,
           alignment: 'right',
         },
+        codeStyle: {
+          italics: true,
+          alignment: 'right',
+          fontSize: 10,
+          bold: true
+        },
         ptext: {
           alignment: 'center',
           margintop: 50 
         },
+
+       
       },
     };
+
+
+
+
 
     pdfMake.createPdf(documentDefinition).open();
     /*   pdfMake.createPdf(documentDefinition).download(name); */

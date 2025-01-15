@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+
+
+    width: max(1200px, 100%, 100vw);
+    height: auto;
+    margin: auto;
+}
